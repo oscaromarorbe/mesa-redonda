@@ -6,6 +6,7 @@ import {
   Text,
   TextInput,
   View,
+  Image,
   ActivityIndicator,
 } from "react-native";
 import firebase from "../database/firebase";
@@ -46,10 +47,10 @@ class PantallaInicio extends React.Component {
               tipo: data.tipo,
             });
           } else {
-            alert("Usuario o contraseña incorrectos. ");
+            alert("Usuario o contraseña incorrectos. (psw) ");
           }
         } else {
-          alert("Usuario o contraseña incorrectos. ");
+          alert("Usuario o contraseña incorrectos. (doc)");
         }
       }
       this.setState({ loading: false });
@@ -62,14 +63,18 @@ class PantallaInicio extends React.Component {
       </View>
     ) : (
       <View style={styles.container}>
-        {/* <View style={styles.employee}>
+        <Image
+          source={require('../assets/fork-knife.png')}
+          style={styles.image}
+        />
+        <View style={styles.employee}>
           <Text
             style={styles.employeeText}
-            onPress={() => this.props.navigation.navigate("PantallaEmpleado")}
+            onPress={() => this.props.navigation.navigate("PantallaRegistro")}
           >
-            Iniciar como empleado
+            Registrarse
           </Text>
-        </View> */}
+        </View>
         <Text style={styles.label}>Usuario</Text>
         <TextInput
           style={styles.input}
@@ -108,6 +113,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  image: {
+    marginBottom: 30,
   },
   employee: {
     marginTop: 20,

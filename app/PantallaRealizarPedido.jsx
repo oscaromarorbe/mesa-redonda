@@ -100,7 +100,7 @@ class PantallaRealizarPedido extends React.Component {
                 }}
               >
                 <ListItem.Content style={styles.listItemContent}>
-                  <ListItem.Title>{articulo.nombre}</ListItem.Title>
+                  <ListItem.Title style={styles.productName}>{articulo.nombre}</ListItem.Title>
                   <ListItem.Subtitle>{articulo.descripcion}</ListItem.Subtitle>
                 </ListItem.Content>
                 <Avatar
@@ -158,6 +158,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#33ee11",
   },
   checkoutText: {
+    fontWeight: "bold",
+    fontSize: 30,
+  },
+  productName: {
     fontWeight: "bold",
     fontSize: 30,
   },

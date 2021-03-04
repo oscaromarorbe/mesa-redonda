@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import PantallaInicio from "./app/PantallaInicio";
+import PantallaRegistro from "./app/PantallaRegistro";
 import PantallaComensal from "./app/PantallaComensal";
 import PantallaCamarero from "./app/PantallaCamarero";
 import PantallaCocina from "./app/PantallaCocina";
@@ -24,11 +25,16 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="PantallaInicio">
         <Stack.Screen
-          name="Home"
+          name="PantallaInicio"
           component={PantallaInicio}
           options={{ title: "Bienvenido" }}
+        />
+        <Stack.Screen
+          name="PantallaRegistro"
+          component={PantallaRegistro}
+          options={{ title: "Registro" }}
         />
         <Stack.Screen
           name="PantallaComensal"

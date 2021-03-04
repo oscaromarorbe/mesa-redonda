@@ -19,6 +19,8 @@ class PantallaCalificarPedidos extends React.Component {
     firebase.db
       .collection("pedidos")
       .where("estado", "in", where)
+      .where("abonado", "==", true)
+      .where("comensal", "==", this.props.currentUser)
       .onSnapshot((querySnapshot) => {
         const pedidos = [];
         querySnapshot.docs.forEach((doc) => {

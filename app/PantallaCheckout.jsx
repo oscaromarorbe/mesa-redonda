@@ -79,9 +79,9 @@ class PantallaArticulo extends React.Component {
                         </Text>
                       </View>
                       <View style={styles.quantityContainer}>
-                        <Text style={styles.quantity}>-</Text>
+                        {/* <Text style={styles.quantity}>-</Text> */}
                         <Text style={styles.quantity}>{articulo.cantidad}</Text>
-                        <Text style={styles.quantity}>+</Text>
+                        {/* <Text style={styles.quantity}>+</Text> */}
                       </View>
                       <Avatar
                         style={styles.itemArticulo}

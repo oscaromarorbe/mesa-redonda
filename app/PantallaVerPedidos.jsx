@@ -25,7 +25,13 @@ class PantallaVerPedidos extends React.Component {
     } else if (this.props.userType === "camarero") {
       field = "estado";
       operator = "in";
-      where.push("Pendiente", "En preparación", "Listo para servir", "Entregado", "Cancelado");
+      where.push(
+        "Pendiente",
+        "En preparación",
+        "Listo para servir",
+        "Entregado",
+        "Cancelado"
+      );
     } else if (this.props.userType === "cocina") {
       field = "estado";
       operator = "in";
@@ -37,13 +43,19 @@ class PantallaVerPedidos extends React.Component {
     } else {
       field = "estado";
       operator = "in";
-      where.push("Pendiente", "En preparación", "Listo para servir", "Entregado", "Cancelado");
+      where.push(
+        "Pendiente",
+        "En preparación",
+        "Listo para servir",
+        "Entregado",
+        "Cancelado"
+      );
     }
     firebase.db
       .collection("pedidos")
       .where(field, operator, where)
       .onSnapshot((querySnapshot) => {
-        const pedidos = [];
+        let pedidos = [];
         querySnapshot.docs.forEach((doc) => {
           const {
             abonado,
@@ -81,6 +93,11 @@ class PantallaVerPedidos extends React.Component {
             subtotal,
           });
         });
+        if (this.props.userType === "comensal") {
+          pedidos = pedidos.filter(
+            (pedido) => pedido.comensal === this.props.currentUser
+          );
+        }
         this.setState({ pedidos, loading: false });
       });
   }

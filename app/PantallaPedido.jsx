@@ -172,31 +172,31 @@ class PantallaArticulo extends React.Component {
                       </Text>
                     </View>
                     <View style={styles.quantityContainer}>
-                      {this.state.currentOrder.estado === "Pendiente" && (
+                      {/* {this.state.currentOrder.estado === "Pendiente" && (
                         <TouchableOpacity
-                        /* onPress={() =>
+                        onPress={() =>
                             this.handleChangeQuantity(
                               "minus",
                               articulo.articuloId
                             )
-                          } */
+                          }
                         >
                           <Text style={styles.quantity}>-</Text>
                         </TouchableOpacity>
-                      )}
+                      )} */}
                       <Text style={styles.quantity}>{articulo.cantidad}</Text>
-                      {this.state.currentOrder.estado === "Pendiente" && (
+                      {/* {this.state.currentOrder.estado === "Pendiente" && (
                         <TouchableOpacity
-                        /* onPress={() =>
+                        onPress={() =>
                             this.handleChangeQuantity(
                               "plus",
                               articulo.articuloId
                             )
-                          } */
+                          }
                         >
                           <Text style={styles.quantity}>+</Text>
                         </TouchableOpacity>
-                      )}
+                      )} */}
                     </View>
                     <Avatar
                       style={styles.itemArticulo}
